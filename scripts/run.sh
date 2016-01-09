@@ -1,8 +1,8 @@
 #!/bin/sh
-if [[ -e /.initialize ]];then
-  source /scripts/initialize.sh
+if [ -e /.initialize ];then
+  . /scripts/initialize.sh
 else
-  source /scripts/vars.sh
+  . /scripts/vars.sh
 fi
 
 echo "====================================="

@@ -1,5 +1,5 @@
 #!/bin/sh
-source /scripts/vars.sh
+. /scripts/vars.sh
 
 if [ ! -z "$MONGODB_DBNAME" ];then
   ROLE="${MONGODB_ROLE:-dbOwner}"

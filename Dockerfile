@@ -2,7 +2,7 @@ FROM alpine:3.2
 MAINTAINER mkscsy@gmail.com
 
 ENV MONGODB_VERSION 3.2.0
-
+ENV MONGODB_PORT 27017
 
 RUN apk --update add curl libgcc libstdc++ && \
     cd /tmp && \
@@ -23,6 +23,6 @@ RUN chmod +x /scripts/*.sh && \
 ENTRYPOINT ["/scripts/run.sh"]
 CMD [""]
 
-EXPOSE 27017
+EXPOSE $MONGODB_PORT
 
 VOLUME ["/data/db"]

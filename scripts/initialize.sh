@@ -7,7 +7,7 @@ else
   ROLE="${MONGODB_ROLE:-root}"
 fi
 
-/usr/bin/mongod --dbpath "$DOCKER_DB_MOUNTPOINT" --storageEngine "$DB_STORAGE_ENGINE" --"$DB_JOURNALING" & \ 
+/usr/bin/mongod --dbpath "$DOCKER_DB_MOUNTPOINT" --storageEngine "$DB_STORAGE_ENGINE" --"$DB_JOURNALING" && \ 
 while ! nc -vz localhost 27017; do sleep 1; done
 
 echo "Creating user: $DB_USER"
